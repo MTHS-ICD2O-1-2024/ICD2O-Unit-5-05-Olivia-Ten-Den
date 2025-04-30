@@ -6,21 +6,30 @@
 
 "use strict"
 
-function checkNumber() {
+function classifyTriangle() {
   // input
-  const ageNumber = parseInt(document.getElementById("age-number").value)
+  const sideA = parseInt(document.getElementById("side-a").value)
+  const sideB = parseInt(document.getElementById("side-b").value)
+  const sideC = parseInt(document.getElementById("side-c").value)
 
-  // process
-  if (ageNumber >= 17) {
+  // process for angles
+  angleA = Math.acos((lengthB**2 + lengthC**2 - lengthA**2) / (2 * lengthB * lengthC)) * (180/Math.PI)
+  angleB = Math.acos((lengthC**2 + lengthA**2 - lengthB**2) / (2 * lengthC * lengthA)) * (180/Math.PI)
+  angleC = Math.acos((lengthA**2 + lengthB**2 - lengthC**2) / (2 * lengthA * lengthB)) * (180/Math.PI)
+
+  //process for angle sum
+  sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
+
+  if (sumOfAngles != 180) {
     //output
     document.getElementById("result").innerHTML =
-      "<p>You can see an R movie alone.</p>"
+      "<p>Oops, this is NOT a triangle.</p>"
   }
   // process
-  else if (ageNumber >= 13) {
+  else if (sideA == sideB && sideA == sideC && sideB == sideC) {
     //output
     document.getElementById("result").innerHTML =
-      "<p>You can see a PG-13 movie alone.</p>"
+      "<p>This is an equilateral triangle.</p>"
   }
     // process
   else if (ageNumber >= 5) {
