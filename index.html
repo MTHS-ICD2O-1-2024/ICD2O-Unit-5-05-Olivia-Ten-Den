@@ -4,7 +4,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <meta name="description" content="Watch a movie, in JavaScript" />
+  <meta name="description" content="Triangle Classification, in JavaScript" />
   <meta name="keywords" content="mths, icd2o" />
   <meta name="author" content="Olivia TD" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -15,7 +15,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png" />
   <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png" />
   <link rel="manifest" href="./site.webmanifest" />
-  <title>Watch a movie, in JavaScript</title>
+  <title>Triangle Classification, in JavaScript</title>
 </head>
 
 <body>
@@ -24,29 +24,53 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout-title">Watch a movie, in JavaScript</span>
+        <span class="mdl-layout-title">Triangle Classification, in JavaScript</span>
       </div>
     </header>
     <main class="mdl-layout__content">
       <div class="right-image">
-        <img src="./images/movie_ratings.jpg" alt="Image of a poster with the types of movie ratings." />
+        <img src="./images/triangle-types.png" alt="Image showing a scalene, isosceles and equilateral triangle." />
       </div>
-      <div class="page-content">Enter your age below.</div>
+      <div class="page-content">Enter the three sides of a triangle.</div>
       <br />
       <form>
+        <h6>Side A:</h6>
         <div class="mdl-textfield mdl-js-textfield">
           <!-- input pattern attribute -->
-          <input class="mdl-textfield__input" type="text" pattern="-?[0-9]*(\.[0-9]+)?" id="age-number" />
+          <input class="mdl-textfield__input" type="number" min = "1" id="side-a" />
           <!-- mdl-textfield__label -->
-          <label class="mdl-textfield__label" for="age-number">Enter age here...</label>
+          <label class="mdl-textfield__label" for="side-a">Enter side A length in cm...</label>
           <!-- class "mdl-textfield__error" -->
-          <span class="mdl-textfield__error">Input is not a number.</span>
+          <span class="mdl-textfield__error">Input is not a valid number.</span>
+          
+        </div>
+        <br />
+        <h6>Side B:</h6>
+        <div class="mdl-textfield mdl-js-textfield">
+          <!-- input pattern attribute -->
+          <input class="mdl-textfield__input" type="number" min="1" id="side-b" />
+          <!-- mdl-textfield__label -->
+          <label class="mdl-textfield__label" for="side-b">Enter side A length in cm...</label>
+          <!-- class "mdl-textfield__error" -->
+          <span class="mdl-textfield__error">Input is not a valid number.</span>
+          
+        </div>
+        <br />
+        <h6>Side C:</h6>
+        <div class="mdl-textfield mdl-js-textfield">
+          <!-- input pattern attribute -->
+          <input class="mdl-textfield__input" type="number" min="1" id="side-c" />
+          <!-- mdl-textfield__label -->
+          <label class="mdl-textfield__label" for="side-c">Enter side A length in cm...</label>
+          <!-- class "mdl-textfield__error" -->
+          <span class="mdl-textfield__error">Input is not a valid number.</span>
+          
         </div>
         <br />
         <br />
         <!-- Accent-colored raised button with ripple -->
         <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-          onclick="checkNumber()" type="button">
+          onclick="classifyTriangle()" type="button">
           Check!
         </button>
       </form>

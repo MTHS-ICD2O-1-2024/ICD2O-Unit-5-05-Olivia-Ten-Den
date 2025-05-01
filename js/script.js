@@ -13,12 +13,12 @@ function classifyTriangle() {
   const sideC = parseInt(document.getElementById("side-c").value)
 
   // process for angles
-  angleA = Math.acos((lengthB**2 + lengthC**2 - lengthA**2) / (2 * lengthB * lengthC)) * (180/Math.PI)
-  angleB = Math.acos((lengthC**2 + lengthA**2 - lengthB**2) / (2 * lengthC * lengthA)) * (180/Math.PI)
-  angleC = Math.acos((lengthA**2 + lengthB**2 - lengthC**2) / (2 * lengthA * lengthB)) * (180/Math.PI)
+  let angleA = Math.acos((sideB**2 + sideC**2 - sideA**2) / (2 * sideB * sideC)) * (180/Math.PI)
+  let angleB = Math.acos((sideC**2 + sideA**2 - sideB**2) / (2 * sideC * sideA)) * (180/Math.PI)
+  let angleC = Math.acos((sideA**2 + sideB**2 - sideC**2) / (2 * sideA * sideB)) * (180/Math.PI)
 
   //process for angle sum
-  sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
+  let sumOfAngles = Number((angleA).toFixed(2)) + Number((angleB).toFixed(2)) + Number((angleC).toFixed(2))
 
   if (sumOfAngles != 180) {
     //output
@@ -32,15 +32,15 @@ function classifyTriangle() {
       "<p>This is an equilateral triangle.</p>"
   }
     // process
-  else if (ageNumber >= 5) {
+  else if (sideA == sideB || sideA == sideC || sideB == sideC) {
     //output
     document.getElementById("result").innerHTML =
-      "<p>You can see a G or PG movie alone.</p>"
+      "<p>This is an isosceles triangle.</p>"
   }
     // process
   else  {
     //output
     document.getElementById("result").innerHTML =
-      "<p>I think you may be to young to watch a movie by yourself. :(</p>"
+      "<p>This is an scalene triangle.</p>"
   }
 }
